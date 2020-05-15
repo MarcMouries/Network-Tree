@@ -1,0 +1,14 @@
+
+  svg {
+    _position: absolute;
+    _top: 0;
+    _left: 0;
+    border: 2px solid white;
+    background: radial-gradient(circle, #8dcded, #0a2c3e);
+
+  }
+
+  body {
+    font-family: Roboto, sans-serif;
+    line-height: 1.5;
+  }

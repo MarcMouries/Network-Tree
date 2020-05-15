@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+    <script type="text/javascript" src="http://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="NetworkTree.css" />
+    <script type="text/javascript" src="NetworkTree.js"></script>
+
+    <script type="text/javascript">
+        var tree_data =
+        {
+            name: 'root',
+            children: [
+                { name: 'A' },
+                { name: 'B' },
+                { name: 'C' },
+                { name: 'D' },
+            ]
+        };
+
+        window.onload = function () {
+            NetworkTree.Display("chart", tree_data);
+        };
+    </script>
+</head>
+
+<body>
+    <p>Here is an example on how to use NetworkChart</p>
+    <pre>
+        var tree_data =
+        {
+            name: 'root',
+            children: [
+                { name: 'A' },
+                { name: 'B' },
+                { name: 'C' },
+                { name: 'D' },
+            ]
+        };
+
+        window.onload = function () {
+            NetworkChart.Display("chart", tree_data);
+        };
+    </pre>
+    <div id="chart" style="width: 500px; height: 500px;"></div>
+</body>
+
+</html>
