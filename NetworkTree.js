@@ -1,6 +1,8 @@
 (function () {
   "use strict";
 
+  console.log("Loading NetworkTree");
+
   var defaultWidth = 400,
     defaultHeight = 250;
 
@@ -12,7 +14,7 @@
       alert(
         "Chart container not found. Did you misspell '" +
           containerId +
-          "'? Make sure to run this method when the DOM is loaded."
+          "'? Make sure to run this method after the DOM is loaded."
       );
       return;
     }
