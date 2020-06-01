@@ -1,16 +1,51 @@
   svg {
     border: 2px solid rgb(3, 3, 3);
+    _cursor: move;
   }
 
+  #tree-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    cursor: pointer;
+  }
 
   .node circle {
     fill: #999;
+    cursor: pointer;
+  }
+
+  .countour_rect {
+    fill: pink;
+    opacity: 0.4;
+    stroke: darkgray;
+    stroke-width : 1;
+    cursor: pointer;
+  }
+
+  .additionalParentLink {
+    fill: none;
+    stroke: blue;
+    stroke-width: 1.5px;
+  }
+
+
+  .countour_circle {
+    fill: lightblue;
+    stroke: darkgray;
+    stroke-width : 1;
   }
 
   .node text {
     font: 10px sans-serif;
+    cursor: pointer;
+
   }
 
+  .chart-bg {
+    fill: #f0f0f0;
+    cursor: move;
+  }
 
   .link {
     fill: none;

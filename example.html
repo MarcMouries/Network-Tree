@@ -5,9 +5,9 @@
     <script type="text/javascript" src="http://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="NetworkTree.css" />
     <script type="text/javascript" src="NetworkTree.js"></script>
-
     <script type="text/javascript">
-        var tree_data =
+
+        var tree_data_1 =
         {
             name: 'root',
             children: [
@@ -18,14 +18,87 @@
             ]
         };
 
-        window.onload = function () {
-            NetworkTree.Display("chart", tree_data);
+        var tree_data_2 =
+        {
+            name: "A",
+            "children": [
+                { name: "B" },
+                {
+                    name: "C", "children": [
+                        { name: "E" },
+                        { name: "F" }
+                    ]
+                },
+                { name: "D" }
+            ]
+        };
+
+
+        var tree_data_building =
+        {
+            "nodeName": "Company",
+            "name": "MyCompany",
+            "children": [
+                {
+                    "nodeName": "Building 1",
+                    "name": "Building A",
+                    "children": [
+                        {
+                            "name": "Level: 1",
+                            "children": [
+                                {
+                                    "nodeName": "Room 1.1",
+                                    "name": "Room A.1",
+                                },
+                                {
+                                    "nodeName": "Room 1.2",
+                                    "name": "Room A.2",
+                                    "id": "1.2",
+                                    "children": [
+                                        {
+                                            "nodeName": "closet 1",
+                                            "name": "closet 1",
+                                            "id": "C1_R1.2_L1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Level: 2",
+                            "children": [
+                                {
+                                    "nodeName": "Room 2.1",
+                                    "name": "Room 2.1.",
+                                    "id": "2.1",
+                                    "children": [
+                                        {
+                                            "nodeName": "closet 1",
+                                            "name": "closet 1",
+                                            "id": "C1_R2.1_L2"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "Building 2",
+                    "name": "Building B",
+                    "children": [
+                        {
+                            "name": "Level: 1"
+                        }
+                    ]
+                }
+            ]
         };
     </script>
 </head>
 
 <body>
-    <p>Here is an example on how to use NetworkChart</p>
+    <p>Simple example on how to use NetworkChart</p>
     <pre>
         var tree_data =
         {
@@ -42,7 +115,30 @@
             NetworkChart.Display("chart", tree_data);
         };
     </pre>
-    <div id="chart"></div>
+    <div id="chart_1"></div>
+    <script>
+        var networkTree = new NetworkTree();
+        networkTree
+        .display(tree_data_1)
+        .inside(document.getElementById("chart_1"))
+        .show();
+
+    </script>
+
+
+    <p>Here is an example on how to use NetworkChart</p>
+    <div id="chart_2"></div>
+    <script>
+        var networkTree = new NetworkTree();
+        networkTree
+        .display(tree_data_2)
+        .inside(document.getElementById("chart_2"))
+        .extra_connections( [   {source : "F", target : "B"} ])
+        .show();
+    </script>
+    <p></p>
+    <div id='tree_container'></div>
+
 </body>
 
 </html>
