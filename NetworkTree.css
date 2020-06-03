@@ -1,3 +1,4 @@
+  /* Network Tree */
   svg {
     border: 2px solid rgb(3, 3, 3);
     _cursor: move;
@@ -19,7 +20,7 @@
     fill: pink;
     opacity: 0.4;
     stroke: darkgray;
-    stroke-width : 1;
+    stroke-width: 1;
     cursor: pointer;
   }
 
@@ -33,7 +34,7 @@
   .countour_circle {
     fill: lightblue;
     stroke: darkgray;
-    stroke-width : 1;
+    stroke-width: 1;
   }
 
   .node text {
