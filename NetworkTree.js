@@ -15,7 +15,7 @@ class NetworkTree {
   }
 
   inside(element) {
-    this.element = element;
+    this.svg_container = element;
     return this;
   }
 
@@ -84,13 +84,70 @@ class NetworkTree {
         svgGroup.attr("transform", d3.event.transform);
       }));
 
+
+
+/*
+  //initilize svg or grab svg
+  var svg_container = d3.select(".svg-container");
+   // Container class to make it responsive.
+  svg_container.classed("svg-TRUC", true) ;
+
+
+var svg = svg_container
+.append("svg")
+   // Responsive SVG needs these 2 attributes and no width and height attr.
+   .attr("preserveAspectRatio", "xMinYMin meet")
+   .attr("viewBox", "0 0 1400 900")
+   // Class to make it responsive.
+   .classed("svg-content-responsive", true);
+
+   // Fill with a rectangle for visualization.
+  // .append("rect")
+  // .classed("rect", true)
+  // .attr("width", 600)
+  // .attr("height", 400);
+
+
+*/
+
+console.log("container:");
+console.log(this.svg_container);
+
+var w = this.svg_container.clientWidth,
+h = this.svg_container.clientHeight;
+console.log("dimension: " + w + " x " + h);
+
+var __height = this.svg_container.style.height;
+var __width = this.svg_container.style.width;
+console.log("dimension: " + __width + " x " + __height);
+
+
+if(this.svg_container) {
+  var rect = this.svg_container.getBoundingClientRect();
+  console.log(rect);  
+}
+
+
+var width = 1000;
+var height = 400;
+      
     var svg = d3
-      .select(this.element)
+      .select(this.svg_container)
       .append("svg")
-      // .attr("viewBox", [0, 0, width, height])
+   // Responsive SVG needs these 2 attributes and no width and height attr.
+  // .attr("preserveAspectRatio", "xMinYMin meet")
+  // .attr("viewBox", "0 0 1400 900")
+  //   .attr("viewBox", [0, 0, width, height])
+    
+
+
+
+  
+
+//   .attr("width", width + margin.left + margin.right)
+//   .attr("height", height + margin.top + margin.bottom)
+
       .call(zoom)
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
       .call(responsivefy); // Call responsivefy to make the chart responsive
 
     var rectBg = svg
